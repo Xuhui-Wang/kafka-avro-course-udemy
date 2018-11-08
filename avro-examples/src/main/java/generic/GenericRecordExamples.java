@@ -1,4 +1,4 @@
-package com.github.simplesteph.avro.generic;
+package generic;
 
 import org.apache.avro.AvroRuntimeException;
 import org.apache.avro.Schema;
@@ -11,7 +11,7 @@ import org.apache.avro.io.DatumWriter;
 import java.io.File;
 import java.io.IOException;
 
-public class GenericRecordExamples {
+class GenericRecordExamples {
 
     public static void main(String[] args) {
 
