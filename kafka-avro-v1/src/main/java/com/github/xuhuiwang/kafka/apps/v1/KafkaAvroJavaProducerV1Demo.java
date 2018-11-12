@@ -1,4 +1,4 @@
-package com.github.simplesteph.kafka.apps.v1;
+package com.github.xuhuiwang.kafka.apps.v1;
 
 import com.example.Customer;
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
@@ -26,27 +26,25 @@ public class KafkaAvroJavaProducerV1Demo {
 
         // copied from avro examples
         Customer customer = Customer.newBuilder()
-                .setAge(34)
-                .setAutomatedEmail(false)
                 .setFirstName("John")
                 .setLastName("Doe")
+                .setAge(35)
                 .setHeight(178f)
                 .setWeight(75f)
+                .setAutomatedEmail(false)
                 .build();
 
-        ProducerRecord<String, Customer> producerRecord = new ProducerRecord<String, Customer>(
+        ProducerRecord<String, Customer> producerRecord = new ProducerRecord<>(
                 topic, customer
         );
 
-        System.out.println(customer);
-        producer.send(producerRecord, new Callback() {
-            @Override
-            public void onCompletion(RecordMetadata metadata, Exception exception) {
-                if (exception == null) {
-                    System.out.println(metadata);
-                } else {
-                    exception.printStackTrace();
-                }
+        System.out.println("Customer: " + customer);
+        producer.send(producerRecord, (metadata, exception) -> {
+            if (exception == null) {
+                System.out.println("Success!");
+                System.out.println(metadata);
+            } else {
+                exception.printStackTrace();
             }
         });
 
