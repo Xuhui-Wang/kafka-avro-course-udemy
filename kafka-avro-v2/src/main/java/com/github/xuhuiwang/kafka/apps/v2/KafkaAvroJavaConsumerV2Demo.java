@@ -1,4 +1,4 @@
-package com.github.simplesteph.kafka.apps.v2;
+package com.github.xuhuiwang.kafka.apps.v2;
 
 import com.example.Customer;
 import io.confluent.kafka.serializers.KafkaAvroDeserializer;
@@ -34,7 +34,7 @@ public class KafkaAvroJavaConsumerV2Demo {
 
         while (true){
             System.out.println("Polling");
-            ConsumerRecords<String, Customer> records = kafkaConsumer.poll(1000);
+            ConsumerRecords<String, Customer> records = kafkaConsumer.poll(5000);
 
             for (ConsumerRecord<String, Customer> record : records){
                 Customer customer = record.value();

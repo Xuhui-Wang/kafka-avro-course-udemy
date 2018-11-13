@@ -1,4 +1,4 @@
-package com.github.simplesteph.kafka.apps.v2;
+package com.github.xuhuiwang.kafka.apps.v2;
 
 import com.example.Customer;
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
@@ -29,8 +29,8 @@ public class KafkaAvroJavaProducerV2Demo {
                 .setAge(34)
                 .setFirstName("John")
                 .setLastName("Doe")
-                .setHeight(178f)
-                .setWeight(75f)
+                .setHeight(160f)
+                .setWeight(90f)
                 .setEmail("john.doe@gmail.com")
                 .setPhoneNumber("(123)-456-7890")
                 .build();
